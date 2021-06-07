@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="shortcut icon" type="image/x-icon" href="./assets/favicon.ico" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sigmoid Function Calculator</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./index.css" />
+
+    <script>
+      MathJax = {
+        loader: { load: ["input/asciimath", "output/chtml"] },
+      };
+    </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script
+      type="text/javascript"
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/startup.js"
+    ></script>
+
+    <!--CSS Spinner-->
+  </head>
+
+  <body>
+    <div class="spinner-wrapper" id="spinner">
+      <div class="spinner">
+        <div class="rect1"></div>
+        <div class="rect2"></div>
+        <div class="rect3"></div>
+        <div class="rect4"></div>
+        <div class="rect5"></div>
+      </div>
+    </div>
+    <div class="sigmoid-wrapper">
+      <main class="sigmoid-body">
+        <section class="section-1-wrapper">
+          <header class="sigmoid-header">
+            <h1>Sigmoid <span>function</span></h1>
+            <button class="btn-1">
+              <a href="#calculator">Go to calculator</a>
+            </button>
+            <p>
+              A sigmoid function, or S-function, is a mathematical function with
+              an S-shaped graph. Here the sigmoid function is related to the
+              special case of logistic function, which is described by the
+              following equations.
+            </p>
+            <p>`S(x)= 1/((1-e^(-x))) = e^(x) /(e^(x)+1)= 1-S(x)`</p>
+          </header>
+          <p>
+            There are a number of common sigmoid functions, such as the logistic
+            function, the hyperbolic tangent, and the arctangent. In machine
+            learning, the term sigmoid function is normally used to refer
+            specifically to the logistic function, also called the logistic
+            sigmoid function. All sigmoid functions have the property that they
+            map the entire number line into a small range such as between 0 and
+            1, or -1 and 1, so one use of a sigmoid function is to convert a
+            real value into one that can be interpreted as a probability.
+          </p>
+          <img
+            src="./assets/download.png"
+            alt="Sigmoid Curve"
+            width="300"
+            height="200"
+          />
+          <p>Sigmoid Curve</p>
+        </section>
+
+        <form id="calculator">
+          <h2>Sigmoid Functtion Calculator</h2>
+          <p>Enter the correct value of the variable in the input box below.</p>
+          <p class="note-board">N/B : Enter only numbers</p>
+          <section class="calculator-inputs">
+            <aside class="input-item">
+              <label for="X">
+                <span>Your X value</span> (<span>`x`</span>)
+              </label>
+              <input
+                type="number"
+                name="X"
+                id="X"
+                min="0"
+                placeholder="Input your X values"
+                required
+              />
+            </aside>
+          </section>
+          <button onclick="outcome()" type="button" class="btn-1 view-result">
+            View Result
+          </button>
+
+          <section class="result-box">
+            <h4>`S(x)= 1/((1-e^(-x)))`: <span id="result">?</span></h4>
+          </section>
+
+          <button type="button" id="clear-all" class="btn-1 clear-all">
+            Clear all fields
+          </button>
+        </form>
+      </main>
+    </div>
+
+    <script src="./index.js"></script>
+  </body>
+  <script>
+    window.addEventListener("load", () => {
+      const spinner = document.getElementById("spinner");
+      setTimeout(() => {
+        spinner.style.display = "none";
+        console.log("something");
+      }, 2000);
+    });
+  </script>
+</html>
